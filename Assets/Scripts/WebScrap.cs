@@ -102,7 +102,7 @@ public class WebScrap : MonoBehaviour
         progress = 1f;
         if (!string.IsNullOrEmpty(www.error))
         {
-            //Algum erro add dps corno
+            //Algum erro
         }
         
         //Faz o download do código fonte
@@ -121,18 +121,18 @@ public class WebScrap : MonoBehaviour
             content = node.InnerText;
             content = WebUtility.HtmlDecode(content);
         }
-
+        Debug.Log(content);
         //Vetor onde o codigo-fonte é separado
         string[] contentSplit = content.Replace(".", "").Split(' ');
         
         //Loop para extração de dados
-        for (int i = 0; i <= 150 ; i++)
+        for (int i = 0; i <= 200 ; i++)
         {
             bool resultAtendimentos = contentSplit[i].Equals("atendimentos");
             if (resultAtendimentos)
             {
                 int.TryParse(contentSplit[i - 1], out numAtendimentos);
-                //Debug.Log("Atendimentos: " + numAtendimentos);
+                Debug.Log("Atendimentos: " + numAtendimentos);
             }
 
             bool resultCasos = contentSplit[i].Equals("casos");
@@ -179,10 +179,9 @@ public class WebScrap : MonoBehaviour
                 strReproducao = contentSplit[i + 1];
                 strReproducao = strReproducao.Replace(",", "").Replace(";", "");
                 int.TryParse(strReproducao, out numReproducao);
-                //Debug.Log("Reproducao: " + numReproducao);
+                Debug.Log("Reproducao: " + numReproducao);
             }
-        }
-        
+
             //Define os dados em texto
             m_Atendimentos.text = Atendimentos + numAtendimentos.ToString();
             m_TotalCasos.text = TotalCasos + numCasos.ToString();
@@ -190,6 +189,6 @@ public class WebScrap : MonoBehaviour
             m_TotalObitos.text = TotalObitos + numMortes.ToString();
             m_Letalidade.text = Letalidade + letalidade;
             m_Ocupação.text = Ocupação + numOcupacao + "%";
-
+        }
     }
 }

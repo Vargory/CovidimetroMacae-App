@@ -12,8 +12,8 @@ PlayerSettings:
   targetDevice: 2
   useOnDemandResources: 0
   accelerometerFrequency: 60
-  companyName: patrickbindelli.dev
-  productName: "Covid\xEDmetro"
+  companyName: vargoryi.dev
+  productName: "Maca\xE9Covid\xEDmetro"
   defaultCursor: {fileID: 0}
   cursorHotspot: {x: 0, y: 0}
   m_SplashScreenBackgroundColor: {r: 0.19215687, g: 0.3019608, b: 0.4745098, a: 1}
@@ -832,7 +832,7 @@ PlayerSettings:
       daydreamIconForeground: {fileID: 0}
       daydreamIconBackground: {fileID: 0}
   cloudServicesEnabled:
-    Collab: 0
+    Collab: 1
     UNet: 1
   luminIcon:
     m_Name: 

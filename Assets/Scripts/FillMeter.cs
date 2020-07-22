@@ -43,12 +43,18 @@ public class FillMeter : MonoBehaviour
     // Update is called once per frame
     public void Update()
     {
-        
+        _repInicial = Convert.ToSingle(script.numReproducao);
 
-        _repInicial = Convert.ToSingle(script.numReproducao) / 10;
+        if (_repInicial < 100)
+        {
+            _repInicial = _repInicial / 10;
+        }else if(_repInicial >= 100)
+        {
+            _repInicial = _repInicial / 100;
+        }
+
         _repFinal = (_repInicial - _min) / (_max - _min);
-
-        //_fillAmount.fillAmount = _repFinal;
+        
 
         //t += Time.deltaTime / duration;
         //_fillAmount.fillAmount = Mathf.Lerp(minimum, _repFinal, t);
@@ -75,7 +81,7 @@ public class FillMeter : MonoBehaviour
     {
         while (true)
         {
-            if (_fillAmount.fillAmount < _repFinal)
+            if (_fillAmount.fillAmount <= _repFinal)
             {
                 _fillAmount.fillAmount = _fillAmount.fillAmount + increase; //Increment the display score by 1I
             }
