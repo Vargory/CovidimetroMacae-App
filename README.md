@@ -1,5 +1,7 @@
 # CovidimetroMacae-App
 
+<h4>** Descontinuado</h4>
+
 <h4>Aplicativo mobile para visualização de dados relacionados à pandemia de Covid-19, na cidade de Macaé-Rj</h4>
 <h5>(Desenvolvido na plataforma Unity)<h5/>
   
